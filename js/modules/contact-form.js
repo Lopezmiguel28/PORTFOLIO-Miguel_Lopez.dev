@@ -27,15 +27,29 @@ export function initContactForm() {
         const data = Object.fromEntries(formData);
 
         // Simular envío (reemplazar con lógica real de envío)
+        // Lógica REAL de envío con Formspree
         try {
-            await simulateSubmit(data);
+            const response = await fetch("https://formspree.io/f/xzddrlgj", {
+                method: "POST",
+                body: formData, // Enviamos el formData directamente
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-            // Éxito
-            showMessage(form, 'success', '¡Mensaje enviado correctamente! Te responderé pronto.');
-            form.reset();
+            if (response.ok) {
+                // Éxito
+                showMessage(form, 'success', '¡Mensaje enviado correctamente! Te responderé pronto.');
+                form.reset();
+                // Limpiar clases de validación (opcional)
+                form.querySelectorAll('.valid').forEach(el => el.classList.remove('valid'));
+            } else {
+                // Error de servidor (ej. Formspree desactivado)
+                throw new Error('Error en la respuesta del servidor');
+            }
 
         } catch (error) {
-            // Error
+            // Error de red o de ejecución
             showMessage(form, 'error', 'Hubo un error al enviar el mensaje. Inténtalo de nuevo.');
         } finally {
             // Restaurar botón
