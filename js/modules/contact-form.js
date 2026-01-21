@@ -7,7 +7,6 @@
 
 export function initContactForm() {
     const form = document.getElementById('contact-form');
-
     if (!form) return;
 
     form.addEventListener('submit', async (e) => {
@@ -15,123 +14,61 @@ export function initContactForm() {
 
         const submitBtn = form.querySelector('button[type="submit"]');
         const btnText = submitBtn.querySelector('.btn__text');
-        const originalText = btnText.textContent;
+        const originalText = btnText ? btnText.textContent : 'Enviar';
 
-        // Estado de carga
-        btnText.textContent = 'Enviando...';
+        // 1. Efecto visual de carga
+        if (btnText) btnText.textContent = 'Enviando...';
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.7';
 
-        // Obtener datos del formulario
+        // 2. Preparar datos
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
 
-        // Simular envío (reemplazar con lógica real de envío)
-        // Lógica REAL de envío con Formspree
         try {
+            // 3. Petición real a Formspree
             const response = await fetch("https://formspree.io/f/xzddrlgj", {
                 method: "POST",
-                body: formData, // Enviamos el formData directamente
+                body: formData,
                 headers: {
                     'Accept': 'application/json'
                 }
             });
 
             if (response.ok) {
-                // Éxito
-                showMessage(form, 'success', '¡Mensaje enviado correctamente! Te responderé pronto.');
+                // Éxito: Formspree recibió el mensaje
+                showMessage(form, 'success', '¡Mensaje enviado con éxito! Te responderé pronto.');
                 form.reset();
-                // Limpiar clases de validación (opcional)
-                form.querySelectorAll('.valid').forEach(el => el.classList.remove('valid'));
+                // Limpiar estilos de validación
+                form.querySelectorAll('.valid, .error').forEach(el => el.classList.remove('valid', 'error'));
             } else {
-                // Error de servidor (ej. Formspree desactivado)
-                throw new Error('Error en la respuesta del servidor');
+                throw new Error('Fallo en el servidor');
             }
-
         } catch (error) {
-            // Error de red o de ejecución
-            showMessage(form, 'error', 'Hubo un error al enviar el mensaje. Inténtalo de nuevo.');
+            // Error: No hay internet o Formspree está caído
+            showMessage(form, 'error', 'Hubo un error al enviar. Por favor, inténtalo de nuevo.');
         } finally {
-            // Restaurar botón
-            btnText.textContent = originalText;
+            // 4. Restaurar botón siempre
+            if (btnText) btnText.textContent = originalText;
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
         }
     });
-
-    // Validación en tiempo real
-    const inputs = form.querySelectorAll('input, textarea');
-
-    inputs.forEach(input => {
-        input.addEventListener('blur', () => validateField(input));
-        input.addEventListener('input', () => {
-            if (input.classList.contains('error')) {
-                validateField(input);
-            }
-        });
-    });
-}
-
-function validateField(field) {
-    const value = field.value.trim();
-    let isValid = true;
-
-    // Validación básica requerida
-    if (field.hasAttribute('required') && !value) {
-        isValid = false;
-    }
-
-    // Validación de email
-    if (field.type === 'email' && value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        isValid = emailRegex.test(value);
-    }
-
-    // Actualizar estilo
-    if (isValid) {
-        field.classList.remove('error');
-        field.classList.add('valid');
-    } else {
-        field.classList.remove('valid');
-        field.classList.add('error');
-    }
-
-    return isValid;
 }
 
 function showMessage(form, type, text) {
-    // Remover mensaje anterior
     const existingMessage = form.querySelector('.form__message');
     if (existingMessage) existingMessage.remove();
 
-    // Crear nuevo mensaje
     const message = document.createElement('div');
     message.className = `form__message form__message--${type}`;
     message.innerHTML = `
         <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
         <span>${text}</span>
     `;
-
     form.appendChild(message);
 
-    // Remover después de 5 segundos
     setTimeout(() => {
         message.style.opacity = '0';
         setTimeout(() => message.remove(), 300);
     }, 5000);
-}
-
-function simulateSubmit(data) {
-    return new Promise((resolve, reject) => {
-        // Simular delay de red
-        setTimeout(() => {
-            // Simular éxito (90% de las veces)
-            if (Math.random() > 0.1) {
-                console.log('📧 Formulario enviado:', data);
-                resolve();
-            } else {
-                reject(new Error('Error de red simulado'));
-            }
-        }, 1500);
-    });
 }
