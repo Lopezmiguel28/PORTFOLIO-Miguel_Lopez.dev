@@ -1,0 +1,135 @@
+/* =============================================
+   BUTTONS COMPONENT
+   Botones reutilizables
+   ============================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn i {
+    font-size: var(--text-sm);
+    transition: transform var(--transition-base);
+}
+
+.btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Primary Button */
+.btn--primary {
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    border: none;
+    box-shadow: var(--shadow-glow);
+}
+
+.btn--primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 50px rgba(124, 58, 237, 0.4);
+}
+
+.btn--primary:hover::before {
+    opacity: 1;
+}
+
+.btn--primary:active {
+    transform: translateY(-1px);
+}
+
+/* Outline Button */
+.btn--outline {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-border-light);
+    position: relative;
+}
+
+.btn--outline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: -1;
+}
+
+.btn--outline:hover {
+    border-color: var(--color-accent-primary);
+    transform: translateY(-3px);
+}
+
+.btn--outline:hover::before {
+    opacity: 0.1;
+}
+
+/* Ghost Button */
+.btn--ghost {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--color-accent-primary);
+    border: 1px solid var(--color-border-accent);
+}
+
+.btn--ghost:hover {
+    background: rgba(124, 58, 237, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Full Width Button */
+.btn--full {
+    width: 100%;
+}
+
+/* Small Button */
+.btn--sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+}
+
+/* Large Button */
+.btn--lg {
+    padding: var(--space-5) var(--space-10);
+    font-size: var(--text-lg);
+}
+
+/* Icon Button */
+.btn--icon {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: var(--radius-full);
+}
+
+.btn--icon i {
+    font-size: var(--text-lg);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .btn {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-sm);
+    }
+}

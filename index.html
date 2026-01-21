@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portafolio de Miguel - Desarrollador Multiplataforma especializado en Java, Kotlin, Android y desarrollo web. Estudiante de DAM en Orihuela, Alicante.">
+    <meta name="keywords"
+        content="desarrollador, programador, Java, Kotlin, Android, DAM, portfolio, Orihuela, Alicante">
+    <meta name="author" content="Miguel">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Miguel | Desarrollador Multiplataforma">
+    <meta property="og:description"
+        content="Desarrollador especializado en aplicaciones multiplataforma, Java, Kotlin y desarrollo web.">
+    <meta property="og:type" content="website">
+
+    <title>Miguel | Desarrollador Multiplataforma</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Devicon - Iconos de tecnologías -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Cursor personalizado -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-code">&lt;Miguel /&gt;</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#hero" class="nav__logo">
+                <span class="logo-bracket">&lt;</span>Miguel<span class="logo-bracket"> /&gt;</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#hero" class="nav__link active">Inicio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Sobre mí</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">Habilidades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">Proyectos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#education" class="nav__link">Formación</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link nav__link--cta">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section" id="hero">
+            <div class="hero__bg">
+                <div class="hero__gradient"></div>
+                <div class="hero__grid"></div>
+                <div class="hero__particles" id="particles"></div>
+            </div>
+
+            <div class="hero__content container">
+                <div class="hero__data">
+                    <div class="hero__badge animate-on-scroll">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Orihuela, Alicante</span>
+                    </div>
+
+                    <h1 class="hero__title animate-on-scroll">
+                        Hola, soy <span class="gradient-text">Miguel</span>
+                    </h1>
+
+                    <div class="hero__subtitle animate-on-scroll">
+                        <span class="typing-text" id="typing-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </div>
+
+                    <p class="hero__description animate-on-scroll">
+                        Estudiante de 2º de <strong>Desarrollo de Aplicaciones Multiplataforma</strong>
+                        en IES Las Espeñetas. Apasionado por crear aplicaciones robustas y
+                        experiencias digitales excepcionales.
+                    </p>
+
+                    <div class="hero__buttons animate-on-scroll">
+                        <a href="#projects" class="btn btn--primary">
+                            <i class="fas fa-rocket"></i>
+                            Ver Proyectos
+                        </a>
+                        <a href="#contact" class="btn btn--outline">
+                            <i class="fas fa-paper-plane"></i>
+                            Contactar
+                        </a>
+                    </div>
+
+                    <div class="hero__social animate-on-scroll">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social__link"
+                            aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social__link"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:miguel@email.com" class="social__link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__image animate-on-scroll">
+                    <div class="hero__image-wrapper">
+                        <div class="hero__image-glow"></div>
+                        <div class="hero__image-border"></div>
+                        <img src="assets/profile.webp" alt="Miguel - Desarrollador" class="hero__img" id="profile-img">
+                        <div class="hero__floating-badge hero__floating-badge--1">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="hero__floating-badge hero__floating-badge--2">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <div class="hero__floating-badge hero__floating-badge--3">
+                            <i class="fab fa-react"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__scroll">
+                <a href="#about" class="scroll-indicator">
+                    <span>Scroll</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Conóceme</span>
+                    <h2 class="section__title">Sobre <span class="gradient-text">Mí</span></h2>
+                </div>
+
+                <div class="about__content">
+                    <div class="about__image-container animate-on-scroll">
+                        <div class="about__image-wrapper">
+                            <img src="assets/about.webp" alt="Miguel trabajando" class="about__img">
+                            <div class="about__experience-badge">
+                                <span class="experience-number">2º</span>
+                                <span class="experience-text">Año DAM</span>
+                            </div>
+                        </div>
+                        <div class="about__decoration about__decoration--1"></div>
+                        <div class="about__decoration about__decoration--2"></div>
+                    </div>
+
+                    <div class="about__data">
+                        <div class="about__info animate-on-scroll">
+                            <h3 class="about__heading">
+                                Desarrollador <span class="gradient-text">Multiplataforma</span> en constante evolución
+                            </h3>
+
+                            <p class="about__text">
+                                Soy Miguel, estudiante de <strong>Desarrollo de Aplicaciones Multiplataforma
+                                    (DAM)</strong>
+                                en el IES Las Espeñetas. Originario de <strong>Orihuela, Alicante</strong>,
+                                me apasiona crear soluciones tecnológicas que marquen la diferencia.
+                            </p>
+
+                            <p class="about__text">
+                                Mi formación me ha permitido desarrollar competencias sólidas en <strong>Java y
+                                    Kotlin</strong>
+                                para el desarrollo de aplicaciones Android, así como en tecnologías web modernas como
+                                <strong>React</strong> y <strong>Astro</strong>. Además, tengo experiencia con bases de
+                                datos
+                                relacionales y metodologías ágiles como <strong>Scrum</strong>.
+                            </p>
+
+                            <p class="about__text">
+                                Me considero una persona <strong>proactiva</strong>, con capacidad de <strong>trabajo en
+                                    equipo</strong>
+                                y siempre buscando nuevos desafíos que me permitan crecer como profesional.
+                            </p>
+                        </div>
+
+                        <div class="about__stats animate-on-scroll">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                                    <span class="stat-label">Tecnologías</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
+                                    <span class="stat-label">Proyectos</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+                                    <span class="stat-label">Bases de Datos</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                                    <span class="stat-label">IDEs Dominados</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about__cta animate-on-scroll">
+                            <a href="assets/cv-miguel.pdf" class="btn btn--primary" download>
+                                <i class="fas fa-download"></i>
+                                Descargar CV
+                            </a>
+                            <a href="#contact" class="btn btn--ghost">
+                                <i class="fas fa-handshake"></i>
+                                Hablemos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Mi Stack</span>
+                    <h2 class="section__title">Habilidades <span class="gradient-text">Técnicas</span></h2>
+                </div>
+
+                <div class="skills__tabs animate-on-scroll">
+                    <button class="skills__tab active" data-tab="languages">
+                        <i class="fas fa-code"></i>
+                        Lenguajes
+                    </button>
+                    <button class="skills__tab" data-tab="databases">
+                        <i class="fas fa-database"></i>
+                        Bases de Datos
+                    </button>
+                    <button class="skills__tab" data-tab="tools">
+                        <i class="fas fa-tools"></i>
+                        Herramientas
+                    </button>
+                    <button class="skills__tab" data-tab="methods">
+                        <i class="fas fa-sitemap"></i>
+                        Metodologías
+                    </button>
+                </div>
+
+                <div class="skills__content">
+                    <!-- Lenguajes -->
+                    <div class="skills__panel active" id="languages">
+                        <div class="skills__grid">
+                            <div class="skill-card animate-on-scroll" data-level="95">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-java-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">Java</h4>
+                                <p class="skill-card__level">Avanzado</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 95%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="90">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-kotlin-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">Kotlin</h4>
+                                <p class="skill-card__level">Avanzado</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 90%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="85">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-javascript-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">JavaScript</h4>
+                                <p class="skill-card__level">Intermedio-Alto</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="85">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-html5-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">HTML5</h4>
+                                <p class="skill-card__level">Intermedio-Alto</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="85">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-css3-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">CSS3</h4>
+                                <p class="skill-card__level">Intermedio-Alto</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="60">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-python-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">Python (Odoo)</h4>
+                                <p class="skill-card__level">Básico</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 60%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="55">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-c-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">C</h4>
+                                <p class="skill-card__level">Básico</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 55%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="80">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-react-original colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">React</h4>
+                                <p class="skill-card__level">Intermedio</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bases de Datos -->
+                    <div class="skills__panel" id="databases">
+                        <div class="skills__grid">
+                            <div class="skill-card animate-on-scroll" data-level="90">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-mysql-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">MySQL</h4>
+                                <p class="skill-card__level">Avanzado</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 90%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="85">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-sqlite-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">SQLite</h4>
+                                <p class="skill-card__level">Intermedio-Alto</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="80">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-postgresql-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">PostgreSQL</h4>
+                                <p class="skill-card__level">Intermedio</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Herramientas -->
+                    <div class="skills__panel" id="tools">
+                        <div class="skills__grid">
+                            <div class="skill-card animate-on-scroll" data-level="90">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-androidstudio-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">Android Studio</h4>
+                                <p class="skill-card__level">Avanzado</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 90%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="85">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-intellij-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">IntelliJ IDEA</h4>
+                                <p class="skill-card__level">Intermedio-Alto</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="85">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-vscode-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">Visual Studio Code</h4>
+                                <p class="skill-card__level">Intermedio-Alto</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="90">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-git-plain colored"></i>
+                                </div>
+                                <h4 class="skill-card__title">Git</h4>
+                                <p class="skill-card__level">Avanzado</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 90%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="90">
+                                <div class="skill-card__icon">
+                                    <i class="devicon-github-original"></i>
+                                </div>
+                                <h4 class="skill-card__title">GitHub</h4>
+                                <p class="skill-card__level">Avanzado</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 90%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-card animate-on-scroll" data-level="75">
+                                <div class="skill-card__icon">
+                                    <i class="fas fa-plug"></i>
+                                </div>
+                                <h4 class="skill-card__title">APIs REST</h4>
+                                <p class="skill-card__level">Intermedio</p>
+                                <div class="skill-card__bar">
+                                    <div class="skill-card__progress" style="--progress: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metodologías -->
+                    <div class="skills__panel" id="methods">
+                        <div class="skills__grid skills__grid--methods">
+                            <div class="method-card animate-on-scroll">
+                                <div class="method-card__icon">
+                                    <i class="fas fa-cubes"></i>
+                                </div>
+                                <div class="method-card__content">
+                                    <h4 class="method-card__title">POO</h4>
+                                    <p class="method-card__description">Programación Orientada a Objetos -
+                                        Encapsulamiento, herencia, polimorfismo y abstracción.</p>
+                                </div>
+                            </div>
+
+                            <div class="method-card animate-on-scroll">
+                                <div class="method-card__icon">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div class="method-card__content">
+                                    <h4 class="method-card__title">Principios SOLID</h4>
+                                    <p class="method-card__description">Diseño de software limpio y mantenible siguiendo
+                                        las mejores prácticas de desarrollo.</p>
+                                </div>
+                            </div>
+
+                            <div class="method-card animate-on-scroll">
+                                <div class="method-card__icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <div class="method-card__content">
+                                    <h4 class="method-card__title">Scrum</h4>
+                                    <p class="method-card__description">Metodología ágil para gestión de proyectos con
+                                        sprints, dailys y retrospectivas.</p>
+                                </div>
+                            </div>
+
+                            <div class="method-card animate-on-scroll">
+                                <div class="method-card__icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div class="method-card__content">
+                                    <h4 class="method-card__title">UI/UX Design</h4>
+                                    <p class="method-card__description">Diseño de interfaces gráficas intuitivas
+                                        centradas en la experiencia del usuario.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Mi Trabajo</span>
+                    <h2 class="section__title">Proyectos <span class="gradient-text">Destacados</span></h2>
+                </div>
+
+                <div class="projects__filters animate-on-scroll">
+                    <button class="projects__filter active" data-filter="all">Todos</button>
+                    <button class="projects__filter" data-filter="android">Android</button>
+                    <button class="projects__filter" data-filter="web">Web</button>
+                    <button class="projects__filter" data-filter="java">Java</button>
+                </div>
+
+                <div class="projects__grid">
+                    <!-- Proyecto 1 -->
+                    <article class="project-card animate-on-scroll" data-category="android">
+                        <div class="project-card__image">
+                            <img src="assets/project-1.webp" alt="TaskMaster Pro - App Android">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="#" class="project-link" aria-label="Ver código">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Ver demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="tag">Kotlin</span>
+                                <span class="tag">Android</span>
+                                <span class="tag">Room DB</span>
+                            </div>
+                            <h3 class="project-card__title">TaskMaster Pro</h3>
+                            <p class="project-card__description">
+                                Aplicación de gestión de tareas con recordatorios, categorías,
+                                estadísticas de productividad y sincronización en la nube.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 2 -->
+                    <article class="project-card animate-on-scroll" data-category="web">
+                        <div class="project-card__image">
+                            <img src="assets/project-2.webp" alt="E-Commerce Dashboard">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="#" class="project-link" aria-label="Ver código">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Ver demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="tag">React</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">API REST</span>
+                            </div>
+                            <h3 class="project-card__title">E-Commerce Dashboard</h3>
+                            <p class="project-card__description">
+                                Panel de administración para tienda online con gestión de productos,
+                                pedidos, clientes y análisis de ventas en tiempo real.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 3 -->
+                    <article class="project-card animate-on-scroll" data-category="java">
+                        <div class="project-card__image">
+                            <img src="assets/project-3.webp" alt="Inventory System">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="#" class="project-link" aria-label="Ver código">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Ver demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">JavaFX</span>
+                            </div>
+                            <h3 class="project-card__title">Sistema de Inventario</h3>
+                            <p class="project-card__description">
+                                Aplicación de escritorio para control de inventario con generación
+                                de reportes, gestión de proveedores y alertas de stock.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 4 -->
+                    <article class="project-card animate-on-scroll" data-category="android">
+                        <div class="project-card__image">
+                            <img src="assets/project-4.webp" alt="FitTracker App">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="#" class="project-link" aria-label="Ver código">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Ver demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="tag">Kotlin</span>
+                                <span class="tag">Jetpack Compose</span>
+                                <span class="tag">SQLite</span>
+                            </div>
+                            <h3 class="project-card__title">FitTracker</h3>
+                            <p class="project-card__description">
+                                App de seguimiento fitness con rutinas personalizadas,
+                                tracking de progreso y gráficas de rendimiento.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 5 -->
+                    <article class="project-card animate-on-scroll" data-category="web">
+                        <div class="project-card__image">
+                            <img src="assets/project-5.webp" alt="Weather App">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="#" class="project-link" aria-label="Ver código">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Ver demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="tag">Astro</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">API</span>
+                            </div>
+                            <h3 class="project-card__title">Weather Station</h3>
+                            <p class="project-card__description">
+                                Aplicación web del tiempo con pronóstico extendido,
+                                geolocalización y visualización de datos meteorológicos.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 6 -->
+                    <article class="project-card animate-on-scroll" data-category="java">
+                        <div class="project-card__image">
+                            <img src="assets/project-6.webp" alt="Chat Application">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="#" class="project-link" aria-label="Ver código">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Ver demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <div class="project-card__tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Sockets</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                            <h3 class="project-card__title">ChatConnect</h3>
+                            <p class="project-card__description">
+                                Sistema de chat en tiempo real con salas, mensajes privados,
+                                envío de archivos y notificaciones.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="projects__cta animate-on-scroll">
+                    <a href="https://github.com" target="_blank" rel="noopener" class="btn btn--outline">
+                        <i class="fab fa-github"></i>
+                        Ver más en GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education section" id="education">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Mi Trayectoria</span>
+                    <h2 class="section__title">Formación <span class="gradient-text">Académica</span></h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline__item animate-on-scroll">
+                        <div class="timeline__marker">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">
+                                <i class="fas fa-calendar-alt"></i>
+                                2024 - Actualidad
+                            </span>
+                            <h3 class="timeline__title">Desarrollo de Aplicaciones Multiplataforma</h3>
+                            <h4 class="timeline__subtitle">IES Las Espeñetas - 2º Curso</h4>
+                            <p class="timeline__description">
+                                Formación integral en desarrollo de software para múltiples plataformas.
+                                Especialización en desarrollo Android con Kotlin/Java, bases de datos,
+                                desarrollo web y metodologías ágiles.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="tag tag--small">Java</span>
+                                <span class="tag tag--small">Kotlin</span>
+                                <span class="tag tag--small">Android</span>
+                                <span class="tag tag--small">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item animate-on-scroll">
+                        <div class="timeline__marker">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">
+                                <i class="fas fa-calendar-alt"></i>
+                                2023 - 2024
+                            </span>
+                            <h3 class="timeline__title">Desarrollo de Aplicaciones Multiplataforma</h3>
+                            <h4 class="timeline__subtitle">IES Las Espeñetas - 1º Curso</h4>
+                            <p class="timeline__description">
+                                Fundamentos de programación, bases de datos, entornos de desarrollo
+                                y primeros pasos en desarrollo de aplicaciones.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="tag tag--small">Fundamentos</span>
+                                <span class="tag tag--small">POO</span>
+                                <span class="tag tag--small">BBDD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item animate-on-scroll">
+                        <div class="timeline__marker">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">
+                                <i class="fas fa-calendar-alt"></i>
+                                Formación Continua
+                            </span>
+                            <h3 class="timeline__title">Cursos y Certificaciones</h3>
+                            <h4 class="timeline__subtitle">Plataformas Online</h4>
+                            <p class="timeline__description">
+                                Aprendizaje continuo a través de cursos especializados
+                                en desarrollo web, Android y nuevas tecnologías.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="tag tag--small">React</span>
+                                <span class="tag tag--small">Astro</span>
+                                <span class="tag tag--small">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">¿Hablamos?</span>
+                    <h2 class="section__title">Ponte en <span class="gradient-text">Contacto</span></h2>
+                </div>
+
+                <div class="contact__content">
+                    <div class="contact__info animate-on-scroll">
+                        <h3 class="contact__heading">Vamos a trabajar juntos</h3>
+                        <p class="contact__text">
+                            Estoy disponible para proyectos freelance, prácticas y
+                            oportunidades laborales. ¡No dudes en contactarme!
+                        </p>
+
+                        <div class="contact__details">
+                            <div class="contact__item">
+                                <div class="contact__item-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact__item-info">
+                                    <span class="contact__item-label">Ubicación</span>
+                                    <span class="contact__item-value">Orihuela, Alicante, España</span>
+                                </div>
+                            </div>
+
+                            <div class="contact__item">
+                                <div class="contact__item-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact__item-info">
+                                    <span class="contact__item-label">Email</span>
+                                    <a href="mailto:miguel@email.com" class="contact__item-value">miguel@email.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact__item">
+                                <div class="contact__item-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div class="contact__item-info">
+                                    <span class="contact__item-label">LinkedIn</span>
+                                    <a href="https://linkedin.com" target="_blank" rel="noopener"
+                                        class="contact__item-value">linkedin.com/in/miguel</a>
+                                </div>
+                            </div>
+
+                            <div class="contact__item">
+                                <div class="contact__item-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact__item-info">
+                                    <span class="contact__item-label">GitHub</span>
+                                    <a href="https://github.com" target="_blank" rel="noopener"
+                                        class="contact__item-value">github.com/miguel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact__form animate-on-scroll" id="contact-form">
+                        <div class="form__group">
+                            <div class="form__field">
+                                <label for="name" class="form__label">Nombre</label>
+                                <input type="text" id="name" name="name" class="form__input" placeholder="Tu nombre"
+                                    required>
+                                <i class="fas fa-user form__icon"></i>
+                            </div>
+
+                            <div class="form__field">
+                                <label for="email" class="form__label">Email</label>
+                                <input type="email" id="email" name="email" class="form__input"
+                                    placeholder="tu@email.com" required>
+                                <i class="fas fa-envelope form__icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="form__field">
+                            <label for="subject" class="form__label">Asunto</label>
+                            <input type="text" id="subject" name="subject" class="form__input"
+                                placeholder="¿De qué quieres hablar?" required>
+                            <i class="fas fa-tag form__icon"></i>
+                        </div>
+
+                        <div class="form__field">
+                            <label for="message" class="form__label">Mensaje</label>
+                            <textarea id="message" name="message" class="form__textarea"
+                                placeholder="Cuéntame sobre tu proyecto..." rows="5" required></textarea>
+                            <i class="fas fa-comment-alt form__icon"></i>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--full">
+                            <span class="btn__text">Enviar Mensaje</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="#hero" class="footer__logo">
+                        <span class="logo-bracket">&lt;</span>Miguel<span class="logo-bracket"> /&gt;</span>
+                    </a>
+                    <p class="footer__text">
+                        Desarrollador Multiplataforma apasionado por crear
+                        soluciones tecnológicas innovadoras.
+                    </p>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__title">Enlaces Rápidos</h4>
+                    <ul class="footer__list">
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#skills">Habilidades</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__social-section">
+                    <h4 class="footer__title">Sígueme</h4>
+                    <div class="footer__social">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="footer__social-link"
+                            aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer__social-link"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="footer__social-link"
+                            aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:miguel@email.com" class="footer__social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Miguel. Diseñado con <i class="fas fa-heart"></i> en Orihuela
+                </p>
+                <a href="#hero" class="footer__back-top" aria-label="Volver arriba">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

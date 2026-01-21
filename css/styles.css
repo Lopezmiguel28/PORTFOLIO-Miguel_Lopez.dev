@@ -1,0 +1,47 @@
+/* =============================================
+   MAIN STYLES - MIGUEL'S PORTFOLIO
+   Archivo principal que importa todos los módulos
+   Estructura modular para fácil mantenimiento
+   ============================================= */
+
+/* ===== BASE ===== */
+@import 'base/variables.css';
+/* Variables CSS y design tokens */
+@import 'base/reset.css';
+/* Reset y estilos base */
+@import 'base/utilities.css';
+/* Clases utilitarias */
+@import 'base/animations.css';
+/* Keyframes y animaciones */
+@import 'base/animations-premium.css';
+/* Animaciones premium avanzadas */
+
+/* ===== COMPONENTS ===== */
+@import 'components/buttons.css';
+/* Botones */
+@import 'components/cards.css';
+/* Tarjetas (skill, method, stat) */
+@import 'components/forms.css';
+/* Formularios e inputs */
+@import 'components/loader.css';
+/* Loader y cursor personalizado */
+
+/* ===== LAYOUT ===== */
+@import 'layout/header.css';
+/* Header y navegación */
+@import 'layout/footer.css';
+/* Footer */
+
+/* ===== SECTIONS ===== */
+@import 'sections/hero.css';
+/* Sección hero principal */
+@import 'sections/about.css';
+/* Sección sobre mí */
+@import 'sections/skills.css';
+/* Sección habilidades */
+@import 'sections/projects.css';
+/* Sección proyectos */
+@import 'sections/education.css';
+/* Sección formación */
+@import 'sections/contact.css';
+/* Sección contacto */

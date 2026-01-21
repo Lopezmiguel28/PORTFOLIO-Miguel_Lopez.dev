@@ -1,0 +1,104 @@
+/* =============================================
+   LOADER COMPONENT
+   Pantalla de carga inicial
+   ============================================= */
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background: var(--color-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-loader);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-code {
+    font-family: var(--font-mono);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-8);
+    animation: pulse 2s infinite;
+}
+
+.loader-bar {
+    width: 200px;
+    height: 4px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.loader-progress {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    animation: loaderProgress 2s ease forwards;
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 10px;
+    height: 10px;
+    background: var(--color-accent-primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    mix-blend-mode: difference;
+    display: none;
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-accent-primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.5;
+    display: none;
+}
+
+@media (hover: hover) {
+
+    .cursor,
+    .cursor-follower {
+        display: block;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .loader-code {
+        font-size: var(--text-2xl);
+    }
+
+    .loader-bar {
+        width: 150px;
+    }
+
+    .cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+}

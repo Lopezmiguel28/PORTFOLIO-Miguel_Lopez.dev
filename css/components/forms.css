@@ -1,0 +1,120 @@
+/* =============================================
+   FORM COMPONENT
+   Estilos de formularios
+   ============================================= */
+
+.form__group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+}
+
+.form__field {
+    position: relative;
+    margin-bottom: var(--space-5);
+}
+
+.form__group .form__field {
+    margin-bottom: 0;
+}
+
+.form__label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    padding: var(--space-4);
+    padding-left: var(--space-12);
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    background: var(--color-bg-tertiary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    background: var(--color-bg-card);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.form__textarea {
+    resize: vertical;
+    min-height: 150px;
+    padding-top: var(--space-4);
+}
+
+.form__icon {
+    position: absolute;
+    left: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    transition: color var(--transition-fast);
+    pointer-events: none;
+}
+
+.form__field:has(.form__textarea) .form__icon {
+    top: var(--space-4);
+    transform: none;
+}
+
+.form__field:has(.form__label) .form__icon {
+    top: calc(50% + 12px);
+}
+
+.form__field:has(.form__label):has(.form__textarea) .form__icon {
+    top: calc(var(--space-4) + 28px);
+}
+
+.form__input:focus+.form__icon,
+.form__textarea:focus+.form__icon {
+    color: var(--color-accent-primary);
+}
+
+/* Form messages */
+.form__message {
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    text-align: center;
+    margin-top: var(--space-4);
+    display: none;
+}
+
+.form__message--success {
+    display: block;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--color-success);
+    color: var(--color-success);
+}
+
+.form__message--error {
+    display: block;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--color-error);
+    color: var(--color-error);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .form__group {
+        grid-template-columns: 1fr;
+    }
+}

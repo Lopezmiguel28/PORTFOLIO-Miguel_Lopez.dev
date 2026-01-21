@@ -1,0 +1,227 @@
+/* =============================================
+   CARDS COMPONENT
+   Tarjetas reutilizables
+   ============================================= */
+
+/* Base Card */
+.card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+}
+
+.card:hover {
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-border-accent);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Skill Card */
+.skill-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    text-align: center;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+}
+
+.skill-card:hover {
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-border-accent);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow);
+}
+
+.skill-card:hover::before {
+    transform: scaleX(1);
+}
+
+.skill-card__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    background: rgba(124, 58, 237, 0.1);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.skill-card:hover .skill-card__icon {
+    background: rgba(124, 58, 237, 0.2);
+    transform: scale(1.1);
+}
+
+.skill-card__title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-2);
+}
+
+.skill-card__level {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-4);
+}
+
+.skill-card__bar {
+    height: 4px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.skill-card__progress {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    width: 0;
+    transition: width 1s ease-out;
+}
+
+.skill-card.visible .skill-card__progress {
+    width: var(--progress);
+}
+
+/* Method Card */
+.method-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+}
+
+.method-card:hover {
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-border-accent);
+    transform: translateX(10px);
+}
+
+.method-card__icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-accent-primary);
+    background: rgba(124, 58, 237, 0.15);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.method-card:hover .method-card__icon {
+    background: var(--color-accent-primary);
+    color: var(--color-text-primary);
+}
+
+.method-card__content {
+    flex: 1;
+}
+
+.method-card__title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-2);
+}
+
+.method-card__description {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* Stat Card */
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    transition: all var(--transition-base);
+}
+
+.stat-card:hover {
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-border-accent);
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--color-accent-primary);
+    background: rgba(124, 58, 237, 0.15);
+    border-radius: var(--radius-lg);
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    line-height: 1;
+}
+
+.stat-plus {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-accent-primary);
+}
+
+.stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .skill-card {
+        padding: var(--space-4);
+    }
+
+    .skill-card__icon {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+
+    .method-card {
+        padding: var(--space-4);
+    }
+}
